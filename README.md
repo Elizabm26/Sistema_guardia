@@ -1,78 +1,28 @@
 Descripción
-Se plantean dos opciones de examen:
+Sistema de control y gestión de Guardianía.
+1. El postulante a policia (usuario) se registra en la aplicación (nombres, apellido, correo, contraseña, cédula) y tiene que esperar que su cuenta sea habilitada.
+2. El tipo de usuario administrador puede habilitar o denegar al postulante.
+3. Una vez habilitado, el postulante puede iniciar sesión en la aplicación, la primera vez que lo haga debe llenar un formualrio (antecedentes penales, fuma, tatuajes, formación académica, etc) y completar más datos de su información (fecha de nacimiento, foto (subir archivo jpeg, jpg, png), celular, localización, estado civil, y otros que considere), así como subir una solicitud (archivo pdf).
+4. El administrador, podrá revisar toda la información al postulante a policia, la encuesta llenada, su solicitud e información actualizada, y que todo se encuentre correcto (debe poderse ver los revisados y los pendientes de revisión y los que tienen observaciones-correcciones por parte del administrador).
+4.1 El administrador podrá enviar correcciones máximo 3 veces, si aún tiene errores será dado de baja como postulante.
+4.2 En caso que la información ya esté consistente, se le asignará un centro de formación y equipamiento (esta información tiene que tener posibilidad de ser registrada, actualizada, y deshabilitada, para que el administrador pueda asignarla sí está habilitada, así como si el centro requiere N postulantes, no poder asignarle a centro más de su capacidad, al menos que se deshabilite a algún postulante para asignar a uno nuevo y no superar la capacidad del centro), así como un horario de formación (como un horario de clases) de lunes a domingo sin exceder las 40 horas semanales, y el área de formación (inteligencia, comunitario, interpol, etc.). 
+5. El ahora postulante aceptado, podrá visualizar su horario de formación, y los equipos, área de formación que le fue asignado.
+6. Podrá marcar hora de entrada y salida según su hoario. Considere alguna marcación rara (muy temprano, muy tarde, etc.) con autorización del administrador.
+Obsevaciones:
+Puede ser construido ÚNICAMENTE CON UNA DE LAS DOS OPCIONES
 
-Primera opción
+1. Spring Boot, Spring Data, Spring MVC, o con
 
-Deberá desarrollar una aplicación web que cumpla con los siguientes requisitos:
+2. JSF con primefaces.
 
-Un grupo de investigadores desean compartir informaciones sobre los documentos 
-que leen. El que lee registra los datos como:
+Se debe priorizar trabajar con estados (Habilitado, Deshabilitado, En Revisión, etc)
 
-Autores (ninguno, uno o más de uno), año de publicación, tipo de publicación 
-(artículos de revistas, conferencias, capítulos de libros, libros, etc.), 
-fuente de publicación (nombres de revistas, libros, conferencias), número de 
-citas recibidas, resumen (Texto nomás de 300 palabras).
-Datos sobre los hallazgos en el documento como:
-Su(s) objetivo(s) (Texto abundante. no más de 250 palabras) -- hallazgo -> objetivo | Varios datos estadisticos
-Datos estadísticos (El nombre o identificador del dato es a consideración del 
-lector. Por ejemplo: si el considera que la proyección del número de dispositivos 
-desplegados para el 2030 es un dato importante entonces crea el nombre del dato: 
-con una descripción Número de dispositivos para el 2030, y le da su valor: 
-50 mil millones. Otro ejemplo, si cree que el nombre de la planta que trata en 
-el documento es importante, entonces crea el dato con una descripción: Nombre de 
-la planta, y le da su valor: Juglans regia. Antes de crear el dato, debe buscar 
-sino ha sido creado antes, caso de haber sido creado debe usar la misma 
-descripción para asignar el valor del nuevo documento encontrado. Para esto 
-debe usar un evento ajax para que, cuando esté ingresando las palabras le vaya 
-mostrando los elementos que ya están almacenados.
-Datos importantes de los logros (Uno o más de uno: Cada uno no más de 250 palabras)
-La aplicación web debe tener dos roles de usuarios. El rol investigador y el rol 
-administrador. El rol investigador, ingresa y consulta. Las consultas deben ser:
+Nota:
 
-* Investigador:
-    - Ingresa
-    - consulta
+1. Debe subir el pdf con las capturas de los resultados con su código (HTML, CSS, JAVASCRIPT, Java, etc.) de cada página ejecutada...
 
-Por título, año, fuente de publicación, por autor, por hallazo. Entre los datos 
-que debe mostrar considere mostrar siempre el número de citas recibas. 
-Con la opción que en el reporte lo pueda ordenar ascendente o descendente.
-Las demás consultas para supletorio
-El usuario administrador debe aprobar todos los ingresos que el investigador ha 
-ingresado. Mientras no las apruebe no serán consideradas en las consultas de los 
-usuarios diferentes a quién ingresó.
+captura pagina1, codigo html página1, código css página1(o de todas), código JavaScript página1 (indicar en que otras páginas), código Java (Modelo-Vista-Controlador involucrado)
 
-* Administrador: 
-    - debe aprobar todos los ingresos
+2. Debe subir en el Drive (en la carpeta creada por el docente con sus apellidos y nombres) la carpeta del proyecto adicionando el script de la base de datos y un archivo de texto plano (txt) que indique claramente como  hacer que ejecute el proyecto. Versiones de software, y nombres de base de datos, usuario, clave...
 
-Deberá subir el pdf  con:
-
-Cada opción que haya completado:
-
-Captura de las pantallas
-Código [vistas -HTML, CSS, JavaScript-, controlador (template), modelo (clases)]. 
-Puede variar según el framework que haya escogido.
-Tablas de la base de datos que intervienen.
- Al final el enlace a un git donde se encuentre el proyecto completo, si es 
-necesario, parte del proyecto será archivo de texto Readme.txt donde especifique 
-que hacer para poderlo ejecutar y probar el proyecto (base de datos, datos de 
-autenticación, versiones de las herramientas usadas, etc). Preferible la base 
-de datos en el servidor proporcionado. Cualquier inconveniente con el servidor 
-informar a tiempo, para que se solucione, caso contrario tomar las decisiones 
-pertinentes.
-
-
-// Tareas por hacer:
-- Crear un buscador: Por título, año, fuente de publicación, por autor, por hallazo. (+)
-- Agregar un campo de aprobado en publicación (+)
-- Registrar una publicacion (+)
-- crear una pagina para aprobar un ingreso (+)
-- Arreglar las consultas de publicación, para que muestro solo las aprobadas (+)
-- cambiar el rol de visitante a investigador.(+)
-- Crear el modelo de hallazgo (+)
-- Crear la tabla de datos (+)
-- Crear la tabla de Objetivos (+)
-- Crear un boton para ordenas las publicaciones (-)
-- Crear la consulta para aprobar una publicación (+)
-- [Registrar publicación] Cambiar el tipo de datos en autor.(+)
-- [Registrar publicación] Agregar Datos en el registro de una publicación (+)
-- [Buscador] se va a filtrar por la tabla hallazgo (+)
+3. Se debe DEFENDER el desarrollo del software, desde la base de datos, hasta la validación y ejecución de la aplicación para obtener una calificación. La defensa se asignará un horario de acuerdo con ambas partes (estudiante profesor)
